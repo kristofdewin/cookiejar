@@ -45,7 +45,7 @@ public class ChocolateChipThread extends Thread implements Runnable {
         }
     }
 
-    public void addToCookieJar(CookieJarAdd add, Cookie cookie) {
+    private void addToCookieJar(CookieJarAdd add, Cookie cookie) {
         add.addCookie(cookie, cookiejar);
     }
 }

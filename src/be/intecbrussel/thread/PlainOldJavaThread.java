@@ -39,7 +39,7 @@ public class PlainOldJavaThread extends Thread {
             }
         }
     }
-    public void addToCookieJar(CookieJarAdd add, Cookie cookie){
+    private void addToCookieJar(CookieJarAdd add, Cookie cookie){
         add.addCookie(cookie, cookiejar);
     }
 

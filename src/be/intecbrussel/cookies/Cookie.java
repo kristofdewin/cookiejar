@@ -7,4 +7,5 @@ public class Cookie implements Serializable {
 
     public Cookie() {
     }
+
 }
