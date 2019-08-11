@@ -22,25 +22,21 @@ public class PlainOldJavaThread extends Thread {
 
     @Override
     public void run() {
-        while(!isInterrupted()) {
+        while (!isInterrupted()) {
             if (cookiejar.size() < 1000) {
                 try {
                     Cookie cookie = new PlainOldJavaCookie();
                     outputStream.writeObject(cookie);
-                    addToCookieJar(cookieJarAdd, cookie);
+                    cookieJarAdd.addCookie(cookie, cookiejar);
                     Thread.sleep(137);
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-            }else{
+            } else {
                 this.interrupt();
             }
         }
     }
-    private void addToCookieJar(CookieJarAdd add, Cookie cookie){
-        add.addCookie(cookie, cookiejar);
-    }
-
 }

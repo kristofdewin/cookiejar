@@ -27,21 +27,17 @@ public class CaramelFudgeThread extends Thread {
                 try {
                     Cookie cookie = new CaramelFudgeCookie();
                     outputStream.writeObject(cookie);
-                    addToCookieJar(cookieJarAdd, cookie);
+                    cookieJarAdd.addCookie(cookie, cookiejar);
                     Thread.sleep(330);
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-            }else {
+            } else {
                 this.interrupt();
             }
         }
 
-    }
-
-    private void addToCookieJar(CookieJarAdd add, Cookie cookie) {
-        add.addCookie(cookie, cookiejar);
     }
 }
